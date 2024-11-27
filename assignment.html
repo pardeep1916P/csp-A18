@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="School Logo">
+            <h1>School Management System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="attendace.html">Attendance</a></li>
+                <li><a href="assignment.html">Assignments</a></li>
+                <li><a href="complaint.html">Complaints</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Assignments Section -->
+    <main>
+        <h2 class="page-title">Assignments</h2>
+        <div class="assignments-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Subject</th>
+                        <th>Assignment Title</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows with Student Assignment Details -->
+                    <script>
+                        // Telugu names for students
+                        const students = [
+                            "అర్జున్ కుమార్", "సాయి ప్రకాష్", "లక్ష్మి ప్రియా", "వేణుగోపాల్", "సుధీర్ రెడ్డి",
+                            "శ్రీదేవి", "నితిన్ కృష్ణ", "స్వాతి", "వికాస్ కుమార్", "పవన్",
+                            "సారథి", "శివ ప్రతాప్", "అమరేశ్వరి", "భాను ప్రకాష్", "దేవి ప్రసాద్",
+                            "మహేశ్వరి", "రమేష్ కుమార్", "సీతారాం", "కీర్తి రాణి", "సూర్య చందర్",
+                            "హేమలత", "అనురాధ", "రాజు గోపాల్", "ప్రభు దేవ", "చంద్ర మౌళి",
+                            "కృష్ణ మూర్తి", "జ్యోతి లక్ష్మి", "భాస్కర్ రావు", "నారాయణ మూర్తి", "వాసుదేవన్",
+                            "అనిల్ రెడ్డి", "వేణి మాధవ్", "గిరి ప్రసాద్", "రామకృష్ణ", "సుమిత",
+                            "నిర్మలా దేవి", "రజని కాంత్", "అదితి సింగ్", "సరోజినీ", "రవి తేజ",
+                            "తులసి రామ", "సత్యనారాయణ", "మాధురి శర్మ", "దామోదర్", "జగన్మోహన్",
+                            "సురేష్ బాబు", "కమల నాథ్", "మాలతి", "నందినీ", "గోపాల్ రావు"
+                        ];
+
+                        // Subjects and Assignment Titles
+                        const subjects = ["Mathematics", "Science", "Telugu", "English", "Social Studies"];
+                        const assignments = [
+                            "Chapter Summary", "Practice Problems", "Essay Writing", "Reading Comprehension", "Project Work"
+                        ];
+
+                        // Generate rows dynamically
+                        students.forEach(student => {
+                            const subject = subjects[Math.floor(Math.random() * subjects.length)];
+                            const assignmentTitle = assignments[Math.floor(Math.random() * assignments.length)];
+                            const dueDate = new Date(
+                                2024, 10, 25 + Math.floor(Math.random() * 7)
+                            ).toISOString().split('T')[0];
+                            const status = Math.random() > 0.5 ? "Submitted" : "Pending";
+
+                            document.write(`<tr>`);
+                            document.write(`<td>${student}</td>`);
+                            document.write(`<td>${subject}</td>`);
+                            document.write(`<td>${assignmentTitle}</td>`);
+                            document.write(`<td>${dueDate}</td>`);
+                            document.write(`<td class="${status === 'Submitted' ? 'submitted' : 'pending'}">${status}</td>`);
+                            document.write(`</tr>`);
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 School Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

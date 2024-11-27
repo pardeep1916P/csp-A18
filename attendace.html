@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Attendance</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="School Logo">
+            <h1>School Management System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="attendace.html">Attendance</a></li>
+                <li><a href="assignment.html">Assignments</a></li>
+                <li><a href="complaint.html">Complaints</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Weekly Attendance Section -->
+    <main>
+        <h2 class="page-title">Student Attendance (Weekly)</h2>
+        <div class="attendance-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>2024-11-21</th>
+                        <th>2024-11-22</th>
+                        <th>2024-11-23</th>
+                        <th>2024-11-24</th>
+                        <th>2024-11-25</th>
+                        <th>2024-11-26</th>
+                        <th>2024-11-27</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows with 50 Telugu Names -->
+                    <script>
+                        // Telugu names for 50 students
+                        const students = [
+                            "అర్జున్ కుమార్", "సాయి ప్రకాష్", "లక్ష్మి ప్రియా", "వేణుగోపాల్", "సుధీర్ రెడ్డి",
+                            "శ్రీదేవి", "నితిన్ కృష్ణ", "స్వాతి", "వికాస్ కుమార్", "పవన్",
+                            "సారథి", "శివ ప్రతాప్", "అమరేశ్వరి", "భాను ప్రకాష్", "దేవి ప్రసాద్",
+                            "మహేశ్వరి", "రమేష్ కుమార్", "సీతారాం", "కీర్తి రాణి", "సూర్య చందర్",
+                            "హేమలత", "అనురాధ", "రాజు గోపాల్", "ప్రభు దేవ", "చంద్ర మౌళి",
+                            "కృష్ణ మూర్తి", "జ్యోతి లక్ష్మి", "భాస్కర్ రావు", "నారాయణ మూర్తి", "వాసుదేవన్",
+                            "అనిల్ రెడ్డి", "వేణి మాధవ్", "గిరి ప్రసాద్", "రామకృష్ణ", "సుమిత",
+                            "నిర్మలా దేవి", "రజని కాంత్", "అదితి సింగ్", "సరోజినీ", "రవి తేజ",
+                            "తులసి రామ", "సత్యనారాయణ", "మాధురి శర్మ", "దామోదర్", "జగన్మోహన్",
+                            "సురేష్ బాబు", "కమల నాథ్", "మాలతి", "నందినీ", "గోపాల్ రావు"
+                        ];
+
+                        // Function to randomly generate attendance (P/A) for 7 days
+                        function randomAttendance() {
+                            const days = [];
+                            for (let i = 0; i < 7; i++) {
+                                days.push(Math.random() > 0.5 ? "P" : "A");
+                            }
+                            return days;
+                        }
+
+                        // Generate rows for all students
+                        students.forEach(student => {
+                            const attendance = randomAttendance();
+                            document.write(`<tr>`);
+                            document.write(`<td>${student}</td>`);
+                            attendance.forEach(day => {
+                                document.write(`<td class="${day}">${day}</td>`);
+                            });
+                            document.write(`</tr>`);
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 School Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
